@@ -1,0 +1,20 @@
+### 1. GET all tasks (should be empty at first)
+GET http://localhost:5001/api/tasks
+
+### Seperator for requests
+###
+
+### 2. CREATE a new task
+POST http://localhost:5001/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Learn how to test APIs",
+  "description": "Use the REST Client extension in VS Code"
+}
+
+### Seperator for requests
+###
+
+### 3. GET all tasks again (should show the new task)
+GET http://localhost:5001/api/tasks

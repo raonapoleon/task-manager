@@ -1,0 +1,45 @@
+.task-form {
+  display: flex;
+  margin-bottom: 2rem;
+  gap: 10px;
+}
+
+.task-input {
+  flex-grow: 1;
+  padding: 14px 18px;
+  font-size: 1rem;
+  border-radius: 8px;
+  /* Dark input styles */
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  color: #e0e0e0;
+  transition: all 0.2s ease-in-out;
+}
+
+.task-input::placeholder {
+  color: #888;
+}
+
+.task-input:focus {
+  outline: none;
+  border-color: #7b68ee; /* A nice purple for focus */
+  box-shadow: 0 0 0 3px rgba(123, 104, 238, 0.2);
+}
+
+.submit-btn {
+  padding: 14px 22px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  /* A classy purple button */
+  background-color: #7b68ee;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+  background-color: #6a5acd;
+  transform: translateY(-2px);
+}
