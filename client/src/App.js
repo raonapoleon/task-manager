@@ -5,7 +5,7 @@ import TaskList from './components/TaskList';
 import './App.css';
 
 // This is the base URL of our backend server
-const API_URL = 'http://localhost:5001/api/tasks';
+const API_URL = 'https://my-task-server.onrender.com/api/tasks';
 
 function App() {
   const [tasks, setTasks] = useState([]);
