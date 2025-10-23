@@ -13,7 +13,29 @@ const PORT = process.env.PORT || 5001; // We'll set the PORT in our .env file, o
 
 // 3. Middleware
 // These are functions that run on every request.
-app.use(cors()); // Enable Cross-Origin Resource Sharing so our frontend can talk to our backend
+// --- REPLACE YOUR OLD 'app.use(cors());' LINE WITH THIS ---
+
+// 1. Define the list of allowed origins
+const allowedOrigins = [
+  'http://localhost:3000', // For your local development
+  'https://task-manager-three-kappa-57.vercel.app/' // <-- PASTE YOUR LIVE VERCEL URL HERE
+];
+
+// 2. Configure CORS with your new whitelist
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or Postman)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  }
+}));
+
+// --- END OF REPLACEMENT ---
 app.use(express.json()); // Allow the server to accept and understand JSON data
 
 // 4. Connect to MongoDB
