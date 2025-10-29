@@ -13,12 +13,11 @@ const PORT = process.env.PORT || 5001; // We'll set the PORT in our .env file, o
 
 // 3. Middleware
 // These are functions that run on every request.
-// --- REPLACE YOUR OLD 'app.use(cors());' LINE WITH THIS ---
 
 // 1. Define the list of allowed origins
 const allowedOrigins = [
   'http://localhost:3000', // For your local development
-  'https://task-manager-three-kappa-57.vercel.app/' // <-- PASTE YOUR LIVE VERCEL URL HERE
+  'https://task-manager-three-kappa-57.vercel.app' // <-- THE SLASH IS NOW REMOVED
 ];
 
 // 2. Configure CORS with your new whitelist
